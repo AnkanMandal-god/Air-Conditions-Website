@@ -18,7 +18,7 @@ export function Hero() {
         }}
       />
 
-      {/* Layer 1: left-side directional fade — text side darkens, right stays bright */}
+      {/* Layer 1: left-side directional fade */}
       <div
         className="absolute inset-0 z-[1] pointer-events-none"
         style={{
@@ -27,26 +27,22 @@ export function Hero() {
         }}
       />
 
-      {/* Layer 2: bottom fade for badge legibility */}
+      {/* Layer 2: bottom fade */}
       <div
         className="absolute bottom-0 left-0 right-0 h-48 z-[1] pointer-events-none"
-        style={{
-          background: 'linear-gradient(to top, rgba(14,26,40,0.65) 0%, transparent 100%)',
-        }}
+        style={{ background: 'linear-gradient(to top, rgba(14,26,40,0.65) 0%, transparent 100%)' }}
       />
 
       {/* Layer 3: top fade into nav */}
       <div
         className="absolute top-0 left-0 right-0 h-28 z-[1] pointer-events-none"
-        style={{
-          background: 'linear-gradient(to bottom, rgba(14,26,40,0.5) 0%, transparent 100%)',
-        }}
+        style={{ background: 'linear-gradient(to bottom, rgba(14,26,40,0.5) 0%, transparent 100%)' }}
       />
 
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pt-28 pb-24">
         <div className="max-w-2xl">
-          {/* Thin daikin-blue accent line above headline */}
+          {/* Daikin blue accent rule */}
           <motion.div
             initial={{ scaleX: 0 }}
             animate={{ scaleX: 1 }}
@@ -56,10 +52,7 @@ export function Hero() {
 
           <h1
             className="font-bold text-white leading-[1.05] mb-6 flex flex-wrap gap-x-4"
-            style={{
-              fontFamily: rajdhani,
-              fontSize: 'clamp(42px, 7vw, 72px)',
-            }}
+            style={{ fontFamily: rajdhani, fontSize: 'clamp(42px, 7vw, 72px)' }}
           >
             {titleWords.map((word, i) => (
               <motion.span
@@ -89,25 +82,27 @@ export function Hero() {
             transition={{ duration: 0.6, delay: 1.1 }}
             className="flex flex-col sm:flex-row gap-4"
           >
-            {/* WhatsApp CTA */}
+            {/* Book a Service — slide to white, text turns daikin blue */}
             <a
-              href="https://wa.me/918777793800?text=I%20need%20AC%20services"
+              href="https://wa.me/918777793800?text=I%20want%20to%20book%20a%20service"
               target="_blank"
               rel="noopener noreferrer"
-              className="relative overflow-hidden group bg-daikin text-white px-9 py-4 font-bold text-lg text-center hover:bg-daikin/90 transition-all"
+              className="relative overflow-hidden group bg-daikin text-white px-9 py-4 font-bold text-lg text-center transition-colors duration-300"
               style={{ borderRadius: '6px' }}
             >
-              <span className="relative z-10">Chat on WhatsApp</span>
-              <div className="absolute inset-0 -translate-x-full group-hover:animate-[shimmer_0.8s_ease-in-out] bg-gradient-to-r from-transparent via-white/25 to-transparent z-0" />
+              <span className="absolute inset-0 bg-white translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-300 ease-in-out" />
+              <span className="relative z-10 group-hover:text-daikin transition-colors duration-300">
+                Book a Service
+              </span>
             </a>
 
-            {/* Call Us — slide fill */}
+            {/* Call Us — slide to white, text turns navy */}
             <a
               href="tel:+918777793800"
-              className="relative overflow-hidden group border-2 border-white/70 text-white px-9 py-4 font-bold text-lg text-center transition-colors duration-300 hover:border-white"
+              className="relative overflow-hidden group border-2 border-white/70 text-white px-9 py-4 font-bold text-lg text-center hover:border-white transition-colors duration-300"
               style={{ borderRadius: '6px' }}
             >
-              <span className="absolute inset-0 translate-x-[-100%] group-hover:translate-x-0 bg-white transition-transform duration-300 ease-in-out" />
+              <span className="absolute inset-0 bg-white translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-300 ease-in-out" />
               <span className="relative z-10 group-hover:text-[#1a2a3a] transition-colors duration-300">
                 Call Us
               </span>
@@ -124,9 +119,9 @@ export function Hero() {
         className="absolute bottom-8 right-6 md:right-10 z-10"
       >
         <div className="relative">
-          {/* Outer glow ring — animated pulse */}
+          {/* Outer glow ring */}
           <div
-            className="absolute inset-0 rounded-2xl animate-[pulse-slow_2.5s_ease-in-out_infinite]"
+            className="absolute inset-0 rounded-2xl animate-[pulse-slow_2.5s_ease-in-out_infinite] pointer-events-none"
             style={{
               background: 'radial-gradient(circle, rgba(0,153,204,0.25) 0%, transparent 70%)',
               transform: 'scale(1.3)',
@@ -159,8 +154,7 @@ export function Hero() {
 
             {/* Rating info */}
             <div>
-              <div className="flex items-center gap-1.5 mb-1">
-                {/* Stars */}
+              <div className="flex items-center gap-1 mb-1">
                 {[1, 2, 3, 4, 5].map((_, i) => (
                   <motion.svg
                     key={i}

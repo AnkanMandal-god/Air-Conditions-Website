@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import { Wrench, Wind, Snowflake, Zap, Car, Building } from 'lucide-react';
+import { Wrench, Wind, Snowflake, Zap, Car, Building, ArrowRight } from 'lucide-react';
 
 const rajdhani = "'Rajdhani', sans-serif";
 
@@ -23,8 +23,8 @@ function ServiceCard({ icon: Icon, title, desc }: { icon: React.ElementType; tit
     const y = e.clientY - rect.top;
     const cx = rect.width / 2;
     const cy = rect.height / 2;
-    const rotX = ((y - cy) / cy) * -7;
-    const rotY = ((x - cx) / cx) * 7;
+    const rotX = ((y - cy) / cy) * -6;
+    const rotY = ((x - cx) / cx) * 6;
     card.style.transform = `perspective(800px) rotateX(${rotX}deg) rotateY(${rotY}deg) translateY(-6px)`;
     card.style.setProperty('--mx', `${x}px`);
     card.style.setProperty('--my', `${y}px`);
@@ -36,12 +36,14 @@ function ServiceCard({ icon: Icon, title, desc }: { icon: React.ElementType; tit
     card.style.transform = '';
   };
 
+  const waLink = `https://wa.me/918777793800?text=I%20need%20a%20quote%20for%20${encodeURIComponent(title)}`;
+
   return (
     <div
       ref={cardRef}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className="relative group text-center p-8 bg-[#f0f8ff] overflow-hidden cursor-default"
+      className="relative group flex flex-col text-center p-8 bg-[#f0f8ff] overflow-hidden cursor-default"
       style={{
         boxShadow: '0 4px 20px rgba(0,0,0,0.08)',
         transition: 'box-shadow 0.3s ease',
@@ -58,23 +60,37 @@ function ServiceCard({ icon: Icon, title, desc }: { icon: React.ElementType; tit
         }}
       />
 
-      {/* Top-right corner decoration */}
+      {/* Top-right corner accent */}
       <div
         className="absolute top-0 right-0 w-5 h-5 bg-daikin/20"
         style={{ clipPath: 'polygon(100% 0, 0 0, 100% 100%)' }}
       />
 
-      <div className="relative z-10">
+      {/* Card content */}
+      <div className="relative z-10 flex flex-col items-center flex-1">
         <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-daikin/10 mb-5 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300">
           <Icon className="w-10 h-10 text-daikin" strokeWidth={1.5} />
         </div>
         <h3
-          className="text-lg font-bold text-[#1a2a3a] mb-2"
-          style={{ fontFamily: rajdhani, fontSize: '20px' }}
+          className="text-[#1a2a3a] mb-2"
+          style={{ fontFamily: rajdhani, fontSize: '20px', fontWeight: 700 }}
         >
           {title}
         </h3>
-        <p className="text-[#1a2a3a]/60 text-sm leading-relaxed">{desc}</p>
+        <p className="text-[#1a2a3a]/60 text-sm leading-relaxed mb-6">{desc}</p>
+
+        {/* Book Now button — slide fill on hover */}
+        <a
+          href={waLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="relative overflow-hidden mt-auto inline-flex items-center gap-2 px-5 py-2.5 font-semibold text-sm border border-daikin text-daikin rounded-md transition-colors duration-300 group/btn"
+          style={{ borderRadius: '6px' }}
+        >
+          <span className="absolute inset-0 bg-daikin translate-x-[-100%] group-hover/btn:translate-x-0 transition-transform duration-300 ease-in-out" />
+          <span className="relative z-10 group-hover/btn:text-white transition-colors duration-300">Book Now</span>
+          <ArrowRight className="relative z-10 w-4 h-4 group-hover/btn:text-white transition-colors duration-300 group-hover/btn:translate-x-1 transition-transform" />
+        </a>
       </div>
     </div>
   );

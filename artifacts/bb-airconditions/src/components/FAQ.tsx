@@ -35,12 +35,12 @@ const faqs = [
 ];
 
 const bgIcons = [
-  { Icon: Wind, top: '8%', left: '5%', rotate: '15deg', size: 48 },
-  { Icon: Wrench, top: '20%', right: '4%', rotate: '-20deg', size: 40 },
-  { Icon: Snowflake, top: '65%', left: '8%', rotate: '30deg', size: 56 },
-  { Icon: Zap, bottom: '10%', right: '10%', rotate: '-10deg', size: 44 },
-  { Icon: Car, top: '45%', right: '2%', rotate: '8deg', size: 36 },
-  { Icon: Building, bottom: '20%', left: '2%', rotate: '-5deg', size: 52 },
+  { Icon: Wind,     top: '8%',    left: '5%',   rotate: '15deg',  size: 48 },
+  { Icon: Wrench,   top: '20%',   right: '4%',  rotate: '-20deg', size: 40 },
+  { Icon: Snowflake,top: '65%',   left: '8%',   rotate: '30deg',  size: 56 },
+  { Icon: Zap,      bottom: '10%',right: '10%', rotate: '-10deg', size: 44 },
+  { Icon: Car,      top: '45%',   right: '2%',  rotate: '8deg',   size: 36 },
+  { Icon: Building, bottom: '20%',left: '2%',   rotate: '-5deg',  size: 52 },
 ];
 
 export function FAQ() {
@@ -54,7 +54,7 @@ export function FAQ() {
         <div
           key={idx}
           className="absolute pointer-events-none select-none"
-          style={{ ...pos, opacity: 0.06, transform: `rotate(${rotate})` }}
+          style={{ ...pos, opacity: 0.05, transform: `rotate(${rotate})` }}
         >
           <Icon style={{ width: size, height: size }} className="text-white" strokeWidth={1} />
         </div>
@@ -80,8 +80,7 @@ export function FAQ() {
                 className={`overflow-hidden border transition-colors duration-200 rounded-lg ${
                   isOpen ? 'border-daikin/50' : 'border-white/10'
                 }`}
-                /* Question box is lighter than section bg (#1e3550) */
-                style={{ background: '#27425e' }}
+                style={{ background: '#344f6e' }}
               >
                 <button
                   onClick={() => toggle(idx)}
