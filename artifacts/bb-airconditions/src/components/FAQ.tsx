@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown, Wind, Wrench, Snowflake, Zap, Car, Building } from 'lucide-react';
 
 const faqs = [
   {
@@ -32,18 +32,35 @@ const faqs = [
   },
 ];
 
+const bgIcons = [
+  { Icon: Wind, top: '8%', left: '5%', rotate: '15deg', size: 48 },
+  { Icon: Wrench, top: '20%', right: '4%', rotate: '-20deg', size: 40 },
+  { Icon: Snowflake, top: '65%', left: '8%', rotate: '30deg', size: 56 },
+  { Icon: Zap, bottom: '10%', right: '10%', rotate: '-10deg', size: 44 },
+  { Icon: Car, top: '45%', right: '2%', rotate: '8deg', size: 36 },
+  { Icon: Building, bottom: '20%', left: '2%', rotate: '-5deg', size: 52 },
+];
+
 export function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
-
-  const toggle = (idx: number) => {
-    setOpenIndex(openIndex === idx ? null : idx);
-  };
+  const toggle = (idx: number) => setOpenIndex(openIndex === idx ? null : idx);
 
   return (
-    <section id="faq" className="py-24 bg-card">
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+    <section id="faq" className="py-24 relative overflow-hidden" style={{ background: '#1e3550' }}>
+      {/* Decorative background icons */}
+      {bgIcons.map(({ Icon, size, rotate, ...pos }, idx) => (
+        <div
+          key={idx}
+          className="absolute pointer-events-none select-none"
+          style={{ ...pos, opacity: 0.06, transform: `rotate(${rotate})` }}
+        >
+          <Icon style={{ width: size, height: size }} className="text-white" strokeWidth={1} />
+        </div>
+      ))}
+
+      <div className="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
+        <div className="text-center mb-14">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">
             Frequently Asked Questions
           </h2>
           <div className="w-20 h-1 bg-daikin mx-auto rounded-full" />
@@ -55,16 +72,16 @@ export function FAQ() {
             return (
               <div
                 key={idx}
-                className={`rounded-lg overflow-hidden border transition-colors duration-200 ${
+                className={`overflow-hidden border transition-colors duration-200 rounded-lg ${
                   isOpen ? 'border-daikin/50' : 'border-white/10'
                 }`}
               >
                 <button
                   onClick={() => toggle(idx)}
-                  className={`w-full flex items-center justify-between px-6 py-5 text-left transition-all duration-200 group ${
-                    isOpen ? 'border-l-[3px] border-daikin' : 'border-l-[3px] border-transparent'
-                  }`}
                   data-testid={`faq-question-${idx}`}
+                  className={`w-full flex items-center justify-between px-6 py-5 text-left transition-all duration-200 border-l-[3px] ${
+                    isOpen ? 'border-daikin' : 'border-transparent'
+                  }`}
                 >
                   <span className="text-base font-semibold text-white pr-4">{faq.q}</span>
                   <ChevronDown
@@ -78,7 +95,7 @@ export function FAQ() {
                   className="overflow-hidden transition-all duration-300 ease-in-out"
                   style={{ maxHeight: isOpen ? '200px' : '0px' }}
                 >
-                  <p className="px-6 pb-5 text-sm text-white/70 leading-relaxed border-l-[3px] border-daikin">
+                  <p className="px-6 pb-5 text-sm text-white/65 leading-relaxed border-l-[3px] border-daikin">
                     {faq.a}
                   </p>
                 </div>

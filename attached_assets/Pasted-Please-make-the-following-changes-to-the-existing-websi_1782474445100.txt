@@ -1,0 +1,92 @@
+Please make the following changes to the existing website:
+
+NAVBAR
+
+
+Change the business name font to Rajdhani Bold (load from Google Fonts)
+Change the WhatsApp button shape to a rectangle with slightly rounded corners (border-radius 6px), not a pill shape
+
+
+HERO
+
+
+Change the headline font to Rajdhani Bold or Montserrat Black and make it much larger (72px desktop, 42px mobile)
+Expand the subheadline to: "From sales and installation to servicing and repair — B.B. Airconditions delivers reliable cooling solutions for homes and businesses across Kolkata."
+Make both CTA buttons more rectangular with slightly rounded corners (border-radius 6px), bolder text, and slightly larger overall
+Add a left-to-right fill animation on the "Call Us" button on hover — it should slide from transparent to white background with dark navy text
+Lighten the background image overlay so the AC image is more clearly visible (reduce opacity to around 25%)
+Redesign the 5-star Google badge — make it larger, add a proper yellow star icon, bold "5.0 on Google" text, and add a subtext line "Based on 4 reviews"
+
+
+TRUST BAR
+
+
+Change the background to white with a very subtle sky blue tint (#f0f8ff)
+Make the icons larger (28px) and change their color to Daikin blue
+Add vertical separators (1px light blue line) between each of the 4 items
+Change text color to dark navy
+Remove the underline hover animation and replace with a subtle scale up (1.08x) on hover
+
+
+SERVICES
+
+
+Add a subtext line below the "Our Services" heading: "From installation to maintenance — we handle every aspect of your cooling needs across Kolkata." in white slightly transparent text
+Change card background to white with a very subtle sky blue tint (#f0f8ff)
+Change card text color to dark navy
+Make the icons inside each card larger (40px) and Daikin blue
+Change card shape to rectangle with the top-right corner clipped/cut using CSS clip-path (cut approximately 20px)
+Add a subtle drop shadow to each card by default
+On hover: card lifts up (translateY -6px), shadow deepens, card tilts slightly in 3D following cursor movement (use JS mousemove with CSS perspective rotateX rotateY), and a spotlight/flashlight glow follows the cursor around the card border
+
+
+BRANDS
+
+
+Change all cards to fully rectangular (remove border radius)
+Add proper space inside each card for a logo image
+Change font color to dark navy for all cards (same as Godrej)
+Add a Daikin blue underline accent below the "Brands We Deal In" heading
+Replace "Coming Soon" placeholder text styling with a dashed border box containing a faded lock icon centered and "Coming Soon" text below in light grey
+
+
+WHY CHOOSE US
+
+
+Make the icons larger (52px) and brighter (white or bright Daikin blue) so they contrast clearly against the dark background
+Make the text below each icon larger
+Fix the icon animation completely: each icon should have a single dotted circle (use SVG stroke-dasharray or CSS dashed border) rotating slowly around it (6s linear infinite) with the center of rotation anchored exactly on the icon itself — not offset. On hover the rotation speeds up (1s) and the icon scales up (1.15x)
+Change the section background to a diagonal or radial gradient from deep blue (#1e3a5f) to dark navy (#1a2a3a) — less dark and more bluish than before
+
+
+FAQ
+
+
+Add floating background elements scattered across the section — use the same icons as the services section (AC unit, wrench, snowflake etc.) at very low opacity (5-8%), non-interactive, purely decorative
+Change the section background to a slightly lighter and more bluish shade (#1e3550) — not as dark as the hero
+
+
+CONTACT
+
+
+Change the section background to white with a subtle sky blue tint (#f0f8ff)
+Change all text colors to dark navy to suit the light background
+Redesign the address, phone, and WhatsApp blocks — remove the full card box style and replace with a left border accent only (3px Daikin blue left border, no surrounding box)
+Change all element colors to lighter shades of blue
+Make the form look more professional with clean field styling
+Add a shimmer sweep hover animation to the Send Message button
+
+
+FLOATING BUTTONS
+
+
+Add a dark border to all three buttons (1px rgba(0,0,0,0.3))
+Change the email button background to light red (#e05555)
+
+
+FOOTER
+
+
+Make the chevron V-shape at the top of the footer more visible by coloring it Daikin blue
+Add a subtle noise or grain texture overlay to the footer background
+Add a Daikin blue glow effect on the contact icons (phone, WhatsApp, email) on hover

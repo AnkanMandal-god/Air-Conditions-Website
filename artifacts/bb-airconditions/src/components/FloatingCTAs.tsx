@@ -22,7 +22,7 @@ function FloatingButton({ icon: Icon, label, href, bgColor, pulse, delay = 0, vi
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       data-testid={`floating-btn-${label.toLowerCase().replace(/\s+/g, '-')}`}
-      className="relative flex items-center group"
+      className="relative flex items-center"
       style={{
         transitionDelay: `${delay}ms`,
         opacity: visible ? 1 : 0,
@@ -30,12 +30,12 @@ function FloatingButton({ icon: Icon, label, href, bgColor, pulse, delay = 0, vi
         transition: 'opacity 0.4s ease, transform 0.4s ease',
       }}
     >
-      {/* Label that appears on hover */}
+      {/* Label on hover */}
       <span
-        className="absolute right-14 bg-background/90 backdrop-blur-sm text-white text-xs font-medium px-3 py-1.5 rounded-lg border border-white/10 whitespace-nowrap pointer-events-none shadow-lg"
+        className="absolute right-14 bg-[#1a2a3a] text-white text-xs font-medium px-3 py-1.5 rounded-lg border border-white/10 whitespace-nowrap pointer-events-none shadow-lg"
         style={{
           opacity: hovered ? 1 : 0,
-          transform: hovered ? 'translateX(0)' : 'translateX(8px)',
+          transform: hovered ? 'translateX(0)' : 'translateX(6px)',
           transition: 'opacity 0.2s ease, transform 0.2s ease',
         }}
       >
@@ -44,11 +44,13 @@ function FloatingButton({ icon: Icon, label, href, bgColor, pulse, delay = 0, vi
 
       {/* Button */}
       <div
-        className={`w-12 h-12 rounded-[8px] flex items-center justify-center shadow-[0_2px_8px_rgba(0,0,0,0.3)] transition-transform duration-200 ${bgColor} ${
+        className={`w-12 h-12 rounded-[8px] flex items-center justify-center transition-transform duration-200 ${bgColor} ${
           pulse ? 'animate-[pulse-slow_2s_ease-in-out_infinite]' : ''
         }`}
         style={{
           transform: hovered ? 'scale(1.1)' : 'scale(1)',
+          boxShadow: '0 2px 10px rgba(0,0,0,0.25)',
+          border: '1px solid rgba(0,0,0,0.3)',
         }}
       >
         <Icon className="w-5 h-5 text-white" />
@@ -70,7 +72,7 @@ export function FloatingCTAs() {
       icon: Mail,
       label: 'Email Us',
       href: 'mailto:ankan@novasites.co',
-      bgColor: 'bg-daikin',
+      bgColor: 'bg-[#e05555]',
       delay: 0,
     },
     {

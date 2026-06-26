@@ -9,23 +9,35 @@ interface FeatureCardProps {
   isVisible: boolean;
 }
 
-function OrbitRing({ size, duration }: { size: number; duration: number }) {
+function DottedOrbit({ hovered }: { hovered: boolean }) {
   return (
     <div
-      className="absolute rounded-full border border-daikin/30 animate-[spin_linear_infinite]"
+      className="absolute inset-0"
       style={{
-        width: size,
-        height: size,
-        top: '50%',
-        left: '50%',
-        transform: 'translate(-50%, -50%)',
-        animationDuration: `${duration}s`,
+        animation: `spin ${hovered ? '1s' : '6s'} linear infinite`,
+        transition: 'animation-duration 0.4s',
       }}
-    />
+    >
+      <svg viewBox="0 0 100 100" className="w-full h-full" overflow="visible">
+        <circle
+          cx="50"
+          cy="50"
+          r="46"
+          fill="none"
+          stroke="#0099cc"
+          strokeWidth="1.5"
+          strokeDasharray="5 7"
+          strokeLinecap="round"
+          opacity="0.55"
+        />
+      </svg>
+    </div>
   );
 }
 
 function FeatureCard({ icon: Icon, title, desc, delay, isVisible }: FeatureCardProps) {
+  const [hovered, setHovered] = useState(false);
+
   return (
     <div
       className="flex flex-col items-center text-center p-8 transition-all duration-700"
@@ -34,17 +46,20 @@ function FeatureCard({ icon: Icon, title, desc, delay, isVisible }: FeatureCardP
         transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
         transitionDelay: `${delay}ms`,
       }}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
     >
-      <div className="relative w-24 h-24 flex items-center justify-center mb-8">
-        <OrbitRing size={60} duration={4} />
-        <OrbitRing size={80} duration={6} />
-        <OrbitRing size={96} duration={8} />
-        <div className="relative z-10 w-14 h-14 flex items-center justify-center bg-daikin/20 rounded-full border border-daikin/40">
-          <Icon className="w-7 h-7 text-daikin" />
+      <div className="relative w-28 h-28 flex items-center justify-center mb-8">
+        <DottedOrbit hovered={hovered} />
+        <div
+          className="relative z-10 w-16 h-16 flex items-center justify-center bg-daikin/20 rounded-full border border-daikin/50 transition-transform duration-300"
+          style={{ transform: hovered ? 'scale(1.15)' : 'scale(1)' }}
+        >
+          <Icon className="w-8 h-8 text-white" strokeWidth={1.75} />
         </div>
       </div>
       <h3 className="text-xl font-bold text-white mb-4">{title}</h3>
-      <p className="text-white/70 leading-relaxed max-w-xs">{desc}</p>
+      <p className="text-white/70 leading-relaxed max-w-xs text-base">{desc}</p>
     </div>
   );
 }
@@ -55,18 +70,10 @@ export function WhyChooseUs() {
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
+      ([entry]) => { if (entry.isIntersecting) setIsVisible(true); },
       { threshold: 0.2 }
     );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
+    if (sectionRef.current) observer.observe(sectionRef.current);
     return () => observer.disconnect();
   }, []);
 
@@ -92,14 +99,19 @@ export function WhyChooseUs() {
   ];
 
   return (
-    <section id="why-us" className="py-24 bg-background" ref={sectionRef}>
+    <section
+      id="why-us"
+      className="py-24"
+      style={{ background: 'linear-gradient(135deg, #1e3a5f 0%, #1a2a3a 100%)' }}
+      ref={sectionRef}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+        <div className="text-center mb-14">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">
             Why Choose B.B. Airconditions?
           </h2>
           <div className="w-20 h-1 bg-daikin mx-auto rounded-full" />
-          <p className="text-white/60 mt-4 max-w-xl mx-auto">
+          <p className="text-white/55 mt-4 max-w-xl mx-auto">
             Trusted by hundreds of homes and businesses across Kolkata
           </p>
         </div>
