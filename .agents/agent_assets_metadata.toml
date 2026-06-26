@@ -1,0 +1,8 @@
+uploads = []
+generated = []
+
+[[outputs]]
+id = "fdiqswlPmsRpc7uDzuIpV"
+uri = "file://artifacts/bb-airconditions/src/assets/hero-ac.jpg"
+type = "image"
+title = "modern AC installation, professional setting, air conditioning unit"

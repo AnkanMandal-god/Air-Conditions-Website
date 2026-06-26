@@ -1,0 +1,335 @@
+# B.B. AIRCONDITIONS WEBSITE — REPLIT PROMPT
+
+## PROJECT BRIEF
+Single-page HTML website for B.B. Airconditions, a Daikin-authorized AC contractor in Kolkata. Target: both residential and commercial clients. 
+
+---
+
+## DESIGN TOKENS
+
+**Color Palette:**
+- Dark Navy: #1a2a3a (primary bg)
+- Daikin Blue: #0099cc (accents, hover states, CTAs)
+- Light Navy: #2d3e4f (footer, alternate sections)
+- White: #ffffff (text, cards)
+- Green (WhatsApp): #25d366
+- Light BG (Brands section): #f5f5f5
+
+**Typography:**
+- Headings: Inter Bold or Barlow Condensed Bold (Google Fonts)
+- Body: Inter Regular or Open Sans (Google Fonts)
+- No serif fonts
+
+**Spacing & Layout:**
+- Consistent padding: 40px horizontal, 60px vertical per section
+- Mobile: 20px horizontal, 40px vertical
+- Border radius: 8px for cards, 12px for buttons
+- No hard-cut transitions between sections — soft visual separation only
+
+**General Rules:**
+- No AI-generated look, no generic templates
+- All text is real, specific to the business
+- Mobile responsive from the start
+- Fast load time — no unnecessary animations or heavy assets
+
+---
+
+## SECTION-BY-SECTION SPECIFICATIONS
+
+### 1. NAVBAR
+**Layout:** Fixed at top, spans full width. Sticky on scroll.
+
+**Content/Structure:**
+- Left: "B.B. AIRCONDITIONS" typeset in bold sans-serif (no logo)
+- Center: Navigation links (Services, Brands, Why Us, Contact) — smooth scroll anchors to sections below
+- Right: Phone number (plain, clickable) + WhatsApp button (rounded pill shape, green bg, white text)
+- Mobile: Hamburger menu on left replaces center nav; phone + WhatsApp still visible right side
+
+**Styling:**
+- Background: Dark navy
+- Text: White
+- Phone number and nav links: clickable/linked
+- Padding: 15px horizontal, 12px vertical
+- Border-bottom: 1px light navy separator
+
+---
+
+### 2. HERO SECTION
+**Layout:** Full width, viewport height.
+
+**Content:**
+- Background: Dark navy with stock image of modern AC installation overlay (dimmed 40% opacity)
+- Headline: "Kolkata's Trusted AC Experts"
+- Subheadline: "Sales, Installation & Service for Residential and Commercial Clients"
+- Two CTA buttons side by side:
+  - Primary: "Chat on WhatsApp" (Daikin blue bg, white text)
+  - Secondary: "Call Us" (Daikin blue border, white text, transparent bg)
+- Bottom left: "5.0 ★ on Google" small badge
+
+**Visual Effects:**
+- Background: Subtle animated gradient shifting slowly between navy and deep blue (infinite loop, 8s duration)
+- Headline: Text animates in on page load — words slide up and fade in one by one (staggered timing)
+- CTA buttons: Shimmer/shine sweep effect on hover (left to right, subtle)
+- Background image: Very slow Ken Burns effect (slight zoom over time, subtle)
+
+**Styling:**
+- Text: White, centered
+- Headline font-size: 48px (desktop), 32px (mobile)
+- Subheadline: 18px, lighter opacity
+- CTA buttons: 16px font, 12px padding vertical, 24px horizontal, rounded 8px
+
+---
+
+### 3. TRUST BAR
+**Layout:** Narrow horizontal strip, full width.
+
+**Content:**
+4 items in a row, equally spaced:
+1. Icon + "Authorized Daikin Dealer"
+2. Icon + "5★ Google Rated"
+3. Icon + "Residential & Commercial"
+4. Icon + "10+ Years Experience"
+
+**Visual Effects:**
+- Icons: Bounce animation on hover (small upward movement, smooth)
+- Text: Daikin blue underline slides in from left on hover
+
+**Styling:**
+- Background: Dark navy
+- Text: White, 14px font
+- Padding: 30px horizontal, 20px vertical
+- Icons: 24px size
+- Use simple/basic icons (checkmark, star, etc.)
+
+---
+
+### 4. SERVICES SECTION
+**Layout:** 3 columns × 2 rows grid of cards.
+
+**Content/Cards:**
+1. AC Installation
+2. AC Servicing & Repair
+3. Refrigeration Repair
+4. Electrical Wiring
+5. Car AC Service
+6. Commercial HVAC
+
+Each card: Icon (top) + Service Name (bold) + One-line description
+
+**Visual Effects:**
+- Card border: Glows Daikin blue on hover
+- Card lift: Slight upward movement on hover
+- Icon: Rotate or flip animation on hover
+- Section background: Glassy diagonal gradient (lighter Daikin blue top-left corner → darker navy bottom-right corner)
+
+**Styling:**
+- Background: Dark navy with gradient overlay
+- Cards: White text, dark navy card bg, 1px border, 12px border-radius
+- Card padding: 24px
+- Icon size: 32px, centered
+- Spacing between cards: 20px gap
+- Mobile: Stack to 1 column
+
+---
+
+### 5. BRANDS SECTION
+**Layout:** Centered, full width.
+
+**Content:**
+- Heading: "Brands We Deal In" (centered, 32px)
+- 4 logo slots in a horizontal row, centered:
+  - Daikin (official logo)
+  - Godrej (official logo)
+  - Placeholder 1 (dashed border, "Coming Soon" text, faded)
+  - Placeholder 2 (dashed border, "Coming Soon" text, faded)
+
+**Visual Effects:**
+- Logos: Slightly faded by default, brighten + small scale up (1.05x) on hover
+- Placeholder slots: Dashed border with subtle pulse animation (opacity flicker, 2s loop)
+- Section background: Slow-moving gradient shimmer left to right (like a gloss sweep, 6s loop)
+
+**Styling:**
+- Background: Light (near white, #f5f5f5)
+- Text: Dark navy
+- Logo size: 80px height (maintain aspect ratio)
+- Placeholder size: 80px square
+- Spacing: 40px between logos
+- Padding: 40px horizontal, 60px vertical
+- Mobile: 2 columns × 2 rows
+
+---
+
+### 6. WHY CHOOSE US SECTION
+**Layout:** 3 columns, full width.
+
+**Content:**
+- Column 1: Icon (with animated orbit rings) + "Authorized Dealer" + "Official Daikin dealer ensuring genuine parts and certified installations"
+- Column 2: Icon (with animated orbit rings) + "Experienced Technicians" + "Skilled team handling residential and commercial projects across Kolkata"
+- Column 3: Icon (with animated orbit rings) + "Quick Response" + "Fast turnaround on service calls and installations"
+
+**Visual Effects:**
+- Orbit rings: Animated circles rotating around each icon (continuous, slower when section not in view)
+- Cards fade in staggered on scroll: Left fades first, center 200ms later, right 400ms later
+- Orbit animation: Only plays when section scrolls into viewport
+- Icon size: 48px
+
+**Styling:**
+- Background: Dark navy
+- Text: White
+- Icon size: 48px, centered
+- Card padding: 30px
+- Spacing: 40px between columns
+- Mobile: Stack to 1 column
+
+---
+
+### 7. FAQ SECTION
+**Layout:** Full width, accordion style.
+
+**Content (7 Questions):**
+1. Do you service both residential and commercial ACs?
+2. Which brands do you sell and service?
+3. How quickly can you send a technician?
+4. Do you offer AMC (Annual Maintenance Contracts)?
+5. Are your technicians certified?
+6. Do you handle AC installation for new units?
+7. What areas in Kolkata do you cover?
+
+(Provide 1-2 sentence answers for each)
+
+**Visual Effects:**
+- Answer slide-down: Smooth expand animation on click (200ms)
+- Chevron icon: Rotates 180° when accordion opens
+- Active question: Left border in Daikin blue (3px)
+
+**Styling:**
+- Background: Light navy (slightly lighter than hero, not too dark)
+- Question text: White, 16px font, bold
+- Answer text: White, 14px, slightly lighter opacity
+- Padding: 40px horizontal, 60px vertical
+- Question row padding: 16px vertical
+- Chevron size: 18px
+
+---
+
+### 8. CONTACT SECTION
+**Layout:** Two columns (left: contact info + map; right: form).
+
+**Content/Left Column:**
+- Address: "6, Robert Street, Pilkhana, Kolkata - 700012"
+- Phone: "087777 93800" (clickable)
+- WhatsApp: "Click to chat" (green link)
+- Google Maps embed (address location)
+
+**Content/Right Column:**
+- Simple form with fields:
+  - Name (text input)
+  - Phone (tel input)
+  - Message (textarea)
+  - Submit button (Daikin blue bg)
+
+**Visual Effects:**
+- Clean, minimal — no distracting animations
+- Form field focus: Simple Daikin blue underline on focus
+- Submit button: Shimmer sweep on hover (same as hero CTAs)
+
+**Styling:**
+- Background: Slightly lighter navy than hero
+- Form field borders: 1px light gray, focus state blue
+- Submit button: Full-width, 12px padding vertical, 16px font
+- Padding: 40px per column
+- Mobile: Stack to 1 column
+
+---
+
+### 9. FLOATING CTA BUTTONS
+**Layout:** Fixed bottom-right corner, stack of 3 buttons.
+
+**Content:**
+- Top button: Email icon → "Email Us"
+- Middle button: WhatsApp icon → "Chat on WhatsApp"
+- Bottom button: Phone icon → "Call Us"
+
+**Visual Effects:**
+- Button shape: Rounded squares (not circles), 48px × 48px
+- WhatsApp button: Subtle pulse animation (opacity 0.8 → 1 → 0.8, 2s loop)
+- All buttons: On hover, expand slightly (1.1x scale) and show text label to the left
+- Page load: Buttons slide in from right side after 1s delay
+- Bottom margin: 20px from edge
+- Right margin: 20px from edge
+
+**Styling:**
+- Email button: Daikin blue bg
+- WhatsApp button: Green (#25d366) bg
+- Call button: Daikin blue bg
+- All: White icons/text
+- Border radius: 8px
+- Shadow: Subtle drop shadow (2px, 0.2 opacity)
+
+---
+
+### 10. FOOTER
+**Layout:** 3 columns, full width.
+
+**Content:**
+- Column 1: "B.B. AIRCONDITIONS" + "Kolkata's trusted AC experts"
+- Column 2: Quick links (Services, Brands, Why Us, Contact) — smooth scroll anchors
+- Column 3: Phone number + WhatsApp link (green) + Email link + Address
+
+**Visual Effects:**
+- Top edge: Chevron/V-shape cut (two angled lines meeting in middle pointing upward), in Daikin blue
+- Footer bg: Subtle noise/grain texture overlay
+- Icons (phone, WhatsApp, email): Daikin blue glow on hover
+- Bottom: Thin separator line between footer and copyright bar (lighter navy)
+
+**Styling:**
+- Background: Dark navy
+- Text: White
+- Padding: 40px horizontal, 50px vertical
+- Copyright bar: Slightly darker navy, 10px padding vertical, centered, 12px font
+- Column spacing: Equal distribution
+- Mobile: Stack to 1 column, adjust padding
+
+---
+
+## HARD RULES
+
+1. **No stock photos that look generic** — only use relevant AC/HVAC imagery that fits the context
+2. **Mobile responsive from the start** — test on 375px viewport
+3. **WhatsApp link format:** `https://wa.me/918777793800?text=I%20need%20AC%20services`
+4. **Phone links format:** `tel:+918777793800`
+5. **Email link format:** `mailto:ankan@novasites.co`
+6. **No framework code, no React, no Vue** — vanilla HTML/CSS/JS only
+7. **Tailwind CSS via CDN only** — no npm installs
+8. **All text must be actual copy, no placeholders**
+9. **Icons:** Use Lucide React via CDN (lucide.dev) or simple SVG inline
+10. **Performance:** Page should load and feel snappy — no heavy scripts
+11. **Daikin logo:** Use official logo from Daikin's brand site (freely available)
+12. **Godrej logo:** Use official logo from Godrej's brand site
+13. **No AI-generated look** — clean, professional, purpose-built
+
+---
+
+## ASSETS
+
+- **Daikin logo:** Official SVG/PNG from daikin.com (use official brand resources)
+- **Godrej logo:** Official from godrej.com
+- **Stock image (hero):** Modern AC installation photo (professional, clean, residential or commercial setting)
+- **Icons:** Basic solid icons (checkmark, star, phone, etc.) — use Lucide or draw simple SVGs
+- **Google Fonts:** Inter, Barlow Condensed, or Open Sans
+
+---
+
+## COPY REFERENCE
+
+- Business name: B.B. AIRCONDITIONS
+- Phone: 087777 93800
+- WhatsApp: Available (use phone number)
+- Address: 6, Robert Street, Pilkhana, Kolkata - 700012
+- Services: AC Sales, Installation, Servicing, Refrigeration Repair, Electrical Wiring, Car AC Service, Commercial HVAC
+- Brands: Daikin (Authorized), Godrej
+- Rating: 5.0 stars on Google
+
+---
+
+END PROMPT
