@@ -21,8 +21,14 @@ export function Navbar() {
 
   return (
     <nav
-      className="fixed top-0 w-full z-50 shadow-md border-b border-white/10"
-      style={{ background: 'linear-gradient(135deg, #0f2044 0%, #1a3a6e 100%)' }}
+      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+        isScrolled ? 'shadow-md border-b border-white/10' : 'border-b border-transparent'
+      }`}
+      style={
+        isScrolled
+          ? { background: 'linear-gradient(135deg, #0a1628 0%, #0d2d4e 100%)' }
+          : { background: 'transparent' }
+      }
     >
       <div className="max-w-7xl mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-20 gap-4">
