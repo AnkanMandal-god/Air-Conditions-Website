@@ -52,7 +52,10 @@ export function Brands() {
           >
             Brands We Deal In
           </h2>
-          <div className="w-20 h-1 bg-daikin mx-auto rounded-full" />
+          <div className="w-20 h-1 bg-daikin mx-auto rounded-full mb-4" />
+          <p className="text-[#1a2a3a]/60 max-w-xl mx-auto text-base">
+            We are an authorized Daikin dealer and work with leading AC brands to bring you the best in cooling technology — backed by factory-trained service and genuine parts.
+          </p>
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 items-stretch">

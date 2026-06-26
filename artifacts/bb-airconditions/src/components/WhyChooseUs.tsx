@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { Shield, Users, Zap } from 'lucide-react';
+import { Shield, Users, Zap, Award, Clock, Wrench } from 'lucide-react';
 
 const rajdhani = "'Rajdhani', sans-serif";
 
@@ -42,7 +42,7 @@ function FeatureCard({ icon: Icon, title, desc, delay, isVisible }: FeatureCardP
 
   return (
     <div
-      className="flex flex-col items-center text-center p-8 transition-all duration-700"
+      className="flex flex-col items-center text-center px-6 py-10 transition-all duration-700 rounded-xl border border-white/5 hover:border-daikin/30 hover:bg-white/5"
       style={{
         opacity: isVisible ? 1 : 0,
         transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
@@ -51,23 +51,24 @@ function FeatureCard({ icon: Icon, title, desc, delay, isVisible }: FeatureCardP
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
-      {/* Icon with orbit — larger container */}
-      <div className="relative w-36 h-36 flex items-center justify-center mb-8">
+      {/* Icon with orbit */}
+      <div className="relative w-40 h-40 flex items-center justify-center mb-6">
         <DottedOrbit hovered={hovered} />
         <div
-          className="relative z-10 w-24 h-24 flex items-center justify-center bg-daikin/20 rounded-full border border-daikin/50 transition-transform duration-300"
-          style={{ transform: hovered ? 'scale(1.15)' : 'scale(1)' }}
+          className="relative z-10 w-28 h-28 flex items-center justify-center bg-daikin/20 rounded-full border border-daikin/50 transition-transform duration-300"
+          style={{ transform: hovered ? 'scale(1.12)' : 'scale(1)' }}
         >
-          <Icon className="w-14 h-14 text-white" strokeWidth={1.5} />
+          <Icon className="w-16 h-16 text-white" strokeWidth={1.3} />
         </div>
       </div>
+
       <h3
-        className="text-white mb-4"
-        style={{ fontFamily: rajdhani, fontSize: '24px', fontWeight: 700 }}
+        className="text-white mb-3"
+        style={{ fontFamily: rajdhani, fontSize: '22px', fontWeight: 700 }}
       >
         {title}
       </h3>
-      <p className="text-white/70 leading-relaxed max-w-xs text-base">{desc}</p>
+      <p className="text-white/65 leading-relaxed text-sm max-w-[220px]">{desc}</p>
     </div>
   );
 }
@@ -79,7 +80,7 @@ export function WhyChooseUs() {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => { if (entry.isIntersecting) setIsVisible(true); },
-      { threshold: 0.2 }
+      { threshold: 0.15 }
     );
     if (sectionRef.current) observer.observe(sectionRef.current);
     return () => observer.disconnect();
@@ -89,20 +90,38 @@ export function WhyChooseUs() {
     {
       icon: Shield,
       title: 'Authorized Dealer',
-      desc: 'Official Daikin dealer ensuring genuine parts and certified installations for every project.',
+      desc: 'Official Daikin dealer ensuring genuine parts and certified installations every time.',
       delay: 0,
     },
     {
       icon: Users,
-      title: 'Experienced Technicians',
-      desc: 'Skilled team handling residential and commercial projects across Kolkata with years of hands-on expertise.',
-      delay: 200,
+      title: 'Expert Technicians',
+      desc: 'Factory-trained team with years of hands-on experience across Kolkata.',
+      delay: 100,
     },
     {
       icon: Zap,
       title: 'Quick Response',
-      desc: 'Fast turnaround on service calls and installations — because your comfort cannot wait.',
+      desc: 'Fast dispatch on service calls — because your comfort cannot wait.',
+      delay: 200,
+    },
+    {
+      icon: Award,
+      title: 'Quality Guaranteed',
+      desc: 'Every job backed by a service guarantee. We don\'t leave until it\'s right.',
+      delay: 300,
+    },
+    {
+      icon: Clock,
+      title: 'AMC Plans',
+      desc: 'Affordable Annual Maintenance Contracts with priority support all year round.',
       delay: 400,
+    },
+    {
+      icon: Wrench,
+      title: 'All Brands Serviced',
+      desc: 'We repair and maintain all major AC brands — not just the ones we sell.',
+      delay: 500,
     },
   ];
 
@@ -127,7 +146,7 @@ export function WhyChooseUs() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {features.map((f, idx) => (
             <FeatureCard
               key={idx}
