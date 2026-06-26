@@ -42,7 +42,7 @@ function FeatureCard({ icon: Icon, title, desc, delay, isVisible }: FeatureCardP
 
   return (
     <div
-      className="flex flex-col items-center text-center px-8 py-16 transition-all duration-700 rounded-xl border border-white/5 hover:border-daikin/30 hover:bg-white/5"
+      className="flex flex-col items-center text-center px-8 py-10 transition-all duration-700 rounded-xl border border-white/5 hover:border-daikin/30 hover:bg-white/5"
       style={{
         opacity: isVisible ? 1 : 0,
         transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
@@ -51,24 +51,24 @@ function FeatureCard({ icon: Icon, title, desc, delay, isVisible }: FeatureCardP
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
-      {/* Icon with orbit — large */}
-      <div className="relative w-56 h-56 flex items-center justify-center mb-10">
+      {/* Icon with orbit */}
+      <div className="relative w-36 h-36 flex items-center justify-center mb-6">
         <DottedOrbit hovered={hovered} />
         <div
-          className="relative z-10 w-40 h-40 flex items-center justify-center bg-daikin/20 rounded-full border border-daikin/50 transition-transform duration-300"
+          className="relative z-10 w-24 h-24 flex items-center justify-center bg-daikin/20 rounded-full border border-daikin/50 transition-transform duration-300"
           style={{ transform: hovered ? 'scale(1.1)' : 'scale(1)' }}
         >
-          <Icon className="w-24 h-24 text-white" strokeWidth={1.2} />
+          <Icon className="w-14 h-14 text-white" strokeWidth={1.4} />
         </div>
       </div>
 
       <h3
-        className="text-white mb-4"
-        style={{ fontFamily: rajdhani, fontSize: '28px', fontWeight: 700 }}
+        className="text-white mb-3"
+        style={{ fontFamily: rajdhani, fontSize: '24px', fontWeight: 700 }}
       >
         {title}
       </h3>
-      <p className="text-white/65 leading-relaxed text-base max-w-[280px]">{desc}</p>
+      <p className="text-white/65 leading-relaxed text-base max-w-[260px]">{desc}</p>
     </div>
   );
 }
