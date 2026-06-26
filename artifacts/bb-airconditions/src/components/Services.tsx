@@ -1,6 +1,8 @@
 import { useRef } from 'react';
 import { Wrench, Wind, Snowflake, Zap, Car, Building } from 'lucide-react';
 
+const rajdhani = "'Rajdhani', sans-serif";
+
 const services = [
   { icon: Wind, title: 'AC Installation', desc: 'Expert installation for all brands and capacities' },
   { icon: Wrench, title: 'AC Servicing & Repair', desc: 'Comprehensive maintenance and repair services' },
@@ -39,11 +41,13 @@ function ServiceCard({ icon: Icon, title, desc }: { icon: React.ElementType; tit
       ref={cardRef}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className="relative group text-center p-8 bg-[#f0f8ff] border border-sky-100 overflow-hidden cursor-default"
+      className="relative group text-center p-8 bg-[#f0f8ff] overflow-hidden cursor-default"
       style={{
         boxShadow: '0 4px 20px rgba(0,0,0,0.08)',
         transition: 'box-shadow 0.3s ease',
         clipPath: 'polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 0 100%)',
+        border: '1px solid rgba(0,153,204,0.25)',
+        borderLeft: '3px solid #0099cc',
       }}
     >
       {/* Spotlight glow */}
@@ -64,7 +68,12 @@ function ServiceCard({ icon: Icon, title, desc }: { icon: React.ElementType; tit
         <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-daikin/10 mb-5 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300">
           <Icon className="w-10 h-10 text-daikin" strokeWidth={1.5} />
         </div>
-        <h3 className="text-lg font-bold text-[#1a2a3a] mb-2">{title}</h3>
+        <h3
+          className="text-lg font-bold text-[#1a2a3a] mb-2"
+          style={{ fontFamily: rajdhani, fontSize: '20px' }}
+        >
+          {title}
+        </h3>
         <p className="text-[#1a2a3a]/60 text-sm leading-relaxed">{desc}</p>
       </div>
     </div>
@@ -78,7 +87,12 @@ export function Services() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-14">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">Our Services</h2>
+          <h2
+            className="text-white mb-3"
+            style={{ fontFamily: rajdhani, fontSize: 'clamp(28px, 4vw, 40px)', fontWeight: 700 }}
+          >
+            Our Services
+          </h2>
           <div className="w-20 h-1 bg-daikin mx-auto rounded-full mb-4" />
           <p className="text-white/60 max-w-xl mx-auto text-base">
             From installation to maintenance — we handle every aspect of your cooling needs across Kolkata.

@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 import { Shield, Users, Zap } from 'lucide-react';
 
+const rajdhani = "'Rajdhani', sans-serif";
+
 interface FeatureCardProps {
   icon: React.ElementType;
   title: string;
@@ -28,7 +30,7 @@ function DottedOrbit({ hovered }: { hovered: boolean }) {
           strokeWidth="1.5"
           strokeDasharray="5 7"
           strokeLinecap="round"
-          opacity="0.55"
+          opacity="0.6"
         />
       </svg>
     </div>
@@ -49,16 +51,22 @@ function FeatureCard({ icon: Icon, title, desc, delay, isVisible }: FeatureCardP
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
-      <div className="relative w-28 h-28 flex items-center justify-center mb-8">
+      {/* Icon with orbit — larger container */}
+      <div className="relative w-36 h-36 flex items-center justify-center mb-8">
         <DottedOrbit hovered={hovered} />
         <div
-          className="relative z-10 w-16 h-16 flex items-center justify-center bg-daikin/20 rounded-full border border-daikin/50 transition-transform duration-300"
+          className="relative z-10 w-24 h-24 flex items-center justify-center bg-daikin/20 rounded-full border border-daikin/50 transition-transform duration-300"
           style={{ transform: hovered ? 'scale(1.15)' : 'scale(1)' }}
         >
-          <Icon className="w-8 h-8 text-white" strokeWidth={1.75} />
+          <Icon className="w-14 h-14 text-white" strokeWidth={1.5} />
         </div>
       </div>
-      <h3 className="text-xl font-bold text-white mb-4">{title}</h3>
+      <h3
+        className="text-white mb-4"
+        style={{ fontFamily: rajdhani, fontSize: '24px', fontWeight: 700 }}
+      >
+        {title}
+      </h3>
       <p className="text-white/70 leading-relaxed max-w-xs text-base">{desc}</p>
     </div>
   );
@@ -107,7 +115,10 @@ export function WhyChooseUs() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">
+          <h2
+            className="text-white mb-3"
+            style={{ fontFamily: rajdhani, fontSize: 'clamp(28px, 4vw, 40px)', fontWeight: 700 }}
+          >
             Why Choose B.B. Airconditions?
           </h2>
           <div className="w-20 h-1 bg-daikin mx-auto rounded-full" />

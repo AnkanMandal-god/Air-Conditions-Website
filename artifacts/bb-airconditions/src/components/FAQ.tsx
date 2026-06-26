@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { ChevronDown, Wind, Wrench, Snowflake, Zap, Car, Building } from 'lucide-react';
 
+const rajdhani = "'Rajdhani', sans-serif";
+
 const faqs = [
   {
     q: 'Do you service both residential and commercial ACs?',
@@ -60,7 +62,10 @@ export function FAQ() {
 
       <div className="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
         <div className="text-center mb-14">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">
+          <h2
+            className="text-white mb-3"
+            style={{ fontFamily: rajdhani, fontSize: 'clamp(28px, 4vw, 40px)', fontWeight: 700 }}
+          >
             Frequently Asked Questions
           </h2>
           <div className="w-20 h-1 bg-daikin mx-auto rounded-full" />
@@ -75,6 +80,8 @@ export function FAQ() {
                 className={`overflow-hidden border transition-colors duration-200 rounded-lg ${
                   isOpen ? 'border-daikin/50' : 'border-white/10'
                 }`}
+                /* Question box is lighter than section bg (#1e3550) */
+                style={{ background: '#27425e' }}
               >
                 <button
                   onClick={() => toggle(idx)}

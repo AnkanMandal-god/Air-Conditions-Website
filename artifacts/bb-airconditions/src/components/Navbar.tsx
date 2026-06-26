@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Menu, X, Phone } from 'lucide-react';
 
+const rajdhani = "'Rajdhani', sans-serif";
+
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -31,7 +33,7 @@ export function Navbar() {
           >
             <span
               className="font-bold text-2xl tracking-wide text-white uppercase"
-              style={{ fontFamily: "'Rajdhani', sans-serif" }}
+              style={{ fontFamily: rajdhani }}
             >
               B.B. AIRCONDITIONS
             </span>
@@ -49,14 +51,17 @@ export function Navbar() {
             ))}
           </div>
 
-          <div className="hidden md:flex items-center space-x-4">
+          <div className="hidden md:flex items-center space-x-3">
+            {/* Call button — bordered box style */}
             <a
               href="tel:+918777793800"
-              className="flex items-center text-white hover:text-daikin transition-colors font-medium"
+              className="flex items-center gap-2 text-white border border-white/40 hover:border-white hover:bg-white/10 px-4 py-2 font-semibold transition-all duration-200"
+              style={{ borderRadius: '6px', fontSize: '14px' }}
             >
-              <Phone className="w-4 h-4 mr-2" />
+              <Phone className="w-4 h-4" />
               087777 93800
             </a>
+            {/* WhatsApp button */}
             <a
               href="https://wa.me/918777793800?text=I%20need%20AC%20services"
               target="_blank"

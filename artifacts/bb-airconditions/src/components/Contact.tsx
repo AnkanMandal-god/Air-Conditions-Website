@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { MapPin, Phone, MessageCircle, Mail } from 'lucide-react';
 
+const rajdhani = "'Rajdhani', sans-serif";
+
 export function Contact() {
   const [form, setForm] = useState({ name: '', phone: '', message: '' });
   const [submitted, setSubmitted] = useState(false);
@@ -16,9 +18,14 @@ export function Contact() {
     <section id="contact" className="py-24 bg-[#f0f8ff]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#1a2a3a] mb-3">Get In Touch</h2>
+          <h2
+            className="text-[#1a2a3a] mb-3"
+            style={{ fontFamily: rajdhani, fontSize: 'clamp(28px, 4vw, 40px)', fontWeight: 700 }}
+          >
+            Get In Touch
+          </h2>
           <div className="w-20 h-1 bg-daikin mx-auto rounded-full" />
-          <p className="text-[#1a2a3a]/50 mt-4">We're here to help — reach out any time</p>
+          <p className="text-[#1a2a3a]/60 mt-4 font-medium">We're here to help — reach out any time</p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
@@ -29,7 +36,7 @@ export function Contact() {
               <MapPin className="w-5 h-5 text-daikin mt-0.5 flex-shrink-0" />
               <div>
                 <p className="text-[#1a2a3a]/50 text-xs font-semibold uppercase tracking-widest mb-1">Address</p>
-                <p className="text-[#1a2a3a] font-medium">6, Robert Street, Pilkhana, Kolkata - 700012</p>
+                <p className="text-[#1a2a3a] font-semibold">6, Robert Street, Pilkhana, Kolkata - 700012</p>
               </div>
             </div>
 
@@ -40,7 +47,7 @@ export function Contact() {
                 <p className="text-[#1a2a3a]/50 text-xs font-semibold uppercase tracking-widest mb-1">Phone</p>
                 <a
                   href="tel:+918777793800"
-                  className="text-[#1a2a3a] font-medium hover:text-daikin transition-colors"
+                  className="text-[#1a2a3a] font-semibold hover:text-daikin transition-colors"
                 >
                   087777 93800
                 </a>
@@ -56,7 +63,7 @@ export function Contact() {
                   href="https://wa.me/918777793800?text=I%20need%20AC%20services"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[#25d366] font-medium hover:underline"
+                  className="text-[#25d366] font-semibold hover:underline"
                 >
                   Click to chat
                 </a>
@@ -80,18 +87,31 @@ export function Contact() {
 
           {/* Right: Form */}
           <div className="bg-white border border-sky-100 rounded-xl p-8 shadow-sm">
+            {/* "Contact Us" title above form */}
+            <h3
+              className="text-[#1a2a3a] mb-6 pb-4 border-b border-sky-100"
+              style={{ fontFamily: rajdhani, fontSize: '28px', fontWeight: 700 }}
+            >
+              Contact Us
+            </h3>
+
             {submitted ? (
-              <div className="flex flex-col items-center justify-center py-14 text-center">
+              <div className="flex flex-col items-center justify-center py-10 text-center">
                 <div className="w-16 h-16 bg-daikin/10 rounded-full flex items-center justify-center mb-4 border border-daikin/30">
                   <Mail className="w-8 h-8 text-daikin" />
                 </div>
-                <h3 className="text-xl font-bold text-[#1a2a3a] mb-2">Message Sent!</h3>
+                <h4
+                  className="text-[#1a2a3a] mb-2"
+                  style={{ fontFamily: rajdhani, fontSize: '22px', fontWeight: 700 }}
+                >
+                  Message Sent!
+                </h4>
                 <p className="text-[#1a2a3a]/50">We'll get back to you shortly.</p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-5">
                 <div>
-                  <label className="block text-xs font-semibold text-[#1a2a3a]/60 uppercase tracking-widest mb-2">Name</label>
+                  <label className="block text-xs font-bold text-[#1a2a3a]/70 uppercase tracking-widest mb-2">Name</label>
                   <input
                     type="text"
                     required
@@ -99,12 +119,12 @@ export function Contact() {
                     onChange={(e) => setForm({ ...form, name: e.target.value })}
                     placeholder="Your full name"
                     data-testid="input-name"
-                    className="w-full bg-[#f8fbff] border border-sky-200 rounded-lg px-4 py-3 text-[#1a2a3a] placeholder:text-[#1a2a3a]/30 focus:outline-none focus:border-daikin transition-colors duration-200 text-sm"
+                    className="w-full bg-[#f8fbff] border-b-2 border-sky-200 focus:border-daikin px-4 py-3 text-[#1a2a3a] placeholder:text-[#1a2a3a]/30 focus:outline-none transition-colors duration-200 text-sm font-medium rounded-t-md"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-[#1a2a3a]/60 uppercase tracking-widest mb-2">Phone</label>
+                  <label className="block text-xs font-bold text-[#1a2a3a]/70 uppercase tracking-widest mb-2">Phone</label>
                   <input
                     type="tel"
                     required
@@ -112,12 +132,12 @@ export function Contact() {
                     onChange={(e) => setForm({ ...form, phone: e.target.value })}
                     placeholder="Your contact number"
                     data-testid="input-phone"
-                    className="w-full bg-[#f8fbff] border border-sky-200 rounded-lg px-4 py-3 text-[#1a2a3a] placeholder:text-[#1a2a3a]/30 focus:outline-none focus:border-daikin transition-colors duration-200 text-sm"
+                    className="w-full bg-[#f8fbff] border-b-2 border-sky-200 focus:border-daikin px-4 py-3 text-[#1a2a3a] placeholder:text-[#1a2a3a]/30 focus:outline-none transition-colors duration-200 text-sm font-medium rounded-t-md"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-[#1a2a3a]/60 uppercase tracking-widest mb-2">Message</label>
+                  <label className="block text-xs font-bold text-[#1a2a3a]/70 uppercase tracking-widest mb-2">Message</label>
                   <textarea
                     required
                     rows={4}
@@ -125,17 +145,19 @@ export function Contact() {
                     onChange={(e) => setForm({ ...form, message: e.target.value })}
                     placeholder="How can we help you?"
                     data-testid="input-message"
-                    className="w-full bg-[#f8fbff] border border-sky-200 rounded-lg px-4 py-3 text-[#1a2a3a] placeholder:text-[#1a2a3a]/30 focus:outline-none focus:border-daikin transition-colors duration-200 resize-none text-sm"
+                    className="w-full bg-[#f8fbff] border-b-2 border-sky-200 focus:border-daikin px-4 py-3 text-[#1a2a3a] placeholder:text-[#1a2a3a]/30 focus:outline-none transition-colors duration-200 resize-none text-sm font-medium rounded-t-md"
                   />
                 </div>
 
+                {/* Send Message — slide fill animation */}
                 <button
                   type="submit"
                   data-testid="button-submit"
-                  className="relative overflow-hidden group w-full bg-daikin text-white py-4 rounded-lg font-bold text-base hover:bg-daikin/90 transition-all"
+                  className="relative overflow-hidden group w-full bg-daikin text-white py-4 font-bold text-base transition-colors duration-300"
+                  style={{ borderRadius: '6px' }}
                 >
+                  <span className="absolute inset-0 bg-[#007aa3] translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-350 ease-in-out" />
                   <span className="relative z-10">Send Message</span>
-                  <div className="absolute inset-0 -translate-x-full group-hover:animate-[shimmer_0.8s_ease-in-out] bg-gradient-to-r from-transparent via-white/25 to-transparent" />
                 </button>
               </form>
             )}
