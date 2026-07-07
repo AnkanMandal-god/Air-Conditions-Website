@@ -61,13 +61,13 @@ export function Navbar() {
 
           {/* Right: CTA buttons — hidden below lg */}
           <div className="hidden lg:flex items-center gap-2 xl:gap-3 flex-shrink-0">
-            {/* Call — blue box, same style as WhatsApp */}
+            {/* Call — outlined blue */}
             <a
               href="tel:+918777793800"
-              className="flex items-center gap-2 bg-daikin hover:bg-daikin/90 text-white font-semibold transition-colors whitespace-nowrap px-4 py-2"
+              className="flex items-center gap-2 bg-transparent hover:bg-daikin/10 text-daikin font-semibold transition-colors whitespace-nowrap px-4 py-2 border border-daikin"
               style={{ borderRadius: '6px', fontSize: '14px' }}
             >
-              <Phone className="w-4 h-4 flex-shrink-0" />
+              <Phone className="w-4 h-4 flex-shrink-0 text-daikin" />
               <span>087777 93800</span>
             </a>
             {/* WhatsApp */}

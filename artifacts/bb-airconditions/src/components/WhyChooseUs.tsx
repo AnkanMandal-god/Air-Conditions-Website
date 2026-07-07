@@ -111,7 +111,7 @@ export function WhyChooseUs() {
     <section
       id="why-us"
       className="py-24"
-      style={{ background: 'linear-gradient(135deg, #1e3a5f 0%, #1a2a3a 100%)' }}
+      style={{ background: 'linear-gradient(135deg, #080c14 0%, #0c1828 50%, #080e1a 100%)' }}
       ref={sectionRef}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

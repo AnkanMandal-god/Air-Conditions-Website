@@ -1,5 +1,12 @@
-import { useRef } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import { Wrench, Wind, Snowflake, Zap, Car, Building, ArrowRight } from 'lucide-react';
+
+const slideshowImages = [
+  'https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=1920&q=80',
+  'https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=1920&q=80',
+  'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&q=80',
+  'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1920&q=80',
+];
 
 const rajdhani = "'Rajdhani', sans-serif";
 
@@ -97,9 +104,30 @@ function ServiceCard({ icon: Icon, title, desc }: { icon: React.ElementType; tit
 }
 
 export function Services() {
+  const [activeSlide, setActiveSlide] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setActiveSlide((prev) => (prev + 1) % slideshowImages.length);
+    }, 4000);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
-    <section id="services" className="py-24 relative overflow-hidden bg-background">
-      <div className="absolute inset-0 bg-gradient-to-br from-daikin/8 via-transparent to-transparent pointer-events-none" />
+    <section id="services" className="py-24 relative overflow-hidden">
+      {/* Slideshow background */}
+      {slideshowImages.map((src, idx) => (
+        <div
+          key={src}
+          className="absolute inset-0 bg-cover bg-center transition-opacity duration-1000"
+          style={{
+            backgroundImage: `url(${src})`,
+            opacity: idx === activeSlide ? 1 : 0,
+          }}
+        />
+      ))}
+      {/* Deep blue overlay */}
+      <div className="absolute inset-0 pointer-events-none" style={{ background: 'linear-gradient(135deg, rgba(10,22,40,0.88) 0%, rgba(0,30,60,0.82) 100%)' }} />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-14">
