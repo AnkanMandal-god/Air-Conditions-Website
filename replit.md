@@ -1,6 +1,6 @@
-# [Project name]
+# B.B. Airconditions Website
 
-_Replace the heading above with the project's name, and this line with one sentence describing what this app does for users._
+A single-page marketing website for B.B. Airconditions, a Daikin-authorized AC contractor in Kolkata, serving residential and commercial clients.
 
 ## Run & Operate
 
