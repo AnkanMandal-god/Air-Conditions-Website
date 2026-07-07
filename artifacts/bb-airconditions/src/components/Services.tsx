@@ -127,7 +127,7 @@ export function Services() {
         />
       ))}
       {/* Deep blue overlay */}
-      <div className="absolute inset-0 pointer-events-none" style={{ background: 'linear-gradient(135deg, rgba(10,22,40,0.88) 0%, rgba(0,30,60,0.82) 100%)' }} />
+      <div className="absolute inset-0 pointer-events-none" style={{ background: 'linear-gradient(135deg, rgba(10,22,40,0.62) 0%, rgba(0,30,60,0.55) 100%)' }} />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-14">
