@@ -1,5 +1,3 @@
-import { Lock } from 'lucide-react';
-
 const rajdhani = "'Rajdhani', sans-serif";
 
 function DaikinLogo() {
@@ -41,6 +39,63 @@ function GodrejLogo() {
   );
 }
 
+function VoltasLogo() {
+  return (
+    <svg viewBox="0 0 200 70" className="w-36 h-auto" xmlns="http://www.w3.org/2000/svg">
+      {/* Orange lightning bolt accent */}
+      <polygon points="18,10 28,10 18,38 28,38 12,62 22,62 36,30 25,30 34,10" fill="#f47920" />
+      <text
+        x="112"
+        y="48"
+        textAnchor="middle"
+        fontFamily="Arial Black, sans-serif"
+        fontWeight="900"
+        fontSize="34"
+        fill="#1a2a3a"
+        letterSpacing="2"
+      >
+        VOLTAS
+      </text>
+    </svg>
+  );
+}
+
+function BlueStarLogo() {
+  return (
+    <svg viewBox="0 0 210 70" className="w-36 h-auto" xmlns="http://www.w3.org/2000/svg">
+      {/* 5-pointed star */}
+      <polygon
+        points="20,8 23.5,19 35,19 25.5,25.5 29,37 20,30 11,37 14.5,25.5 5,19 16.5,19"
+        fill="#005baa"
+      />
+      <text
+        x="118"
+        y="34"
+        textAnchor="middle"
+        fontFamily="Arial Black, sans-serif"
+        fontWeight="900"
+        fontSize="17"
+        fill="#005baa"
+        letterSpacing="1"
+      >
+        BLUE STAR
+      </text>
+      <text
+        x="118"
+        y="54"
+        textAnchor="middle"
+        fontFamily="Arial, sans-serif"
+        fontWeight="400"
+        fontSize="11"
+        fill="#1a2a3a"
+        letterSpacing="3"
+      >
+        COOLING EXPERTS
+      </text>
+    </svg>
+  );
+}
+
 export function Brands() {
   return (
     <section id="brands" className="py-20 bg-[#f5f5f5]">
@@ -71,16 +126,16 @@ export function Brands() {
             <p className="text-xs text-[#1a2a3a]/40 mt-3 font-semibold uppercase tracking-widest">Authorized Service</p>
           </div>
 
-          {/* Coming Soon 1 */}
-          <div className="flex flex-col items-center justify-center p-10 border-2 border-dashed border-gray-300 bg-white min-h-[140px] animate-[pulse-slow_2s_ease-in-out_infinite]">
-            <Lock className="w-8 h-8 text-gray-300 mb-2" strokeWidth={1.5} />
-            <span className="text-gray-400 font-medium text-sm">Coming Soon</span>
+          {/* Voltas */}
+          <div className="flex flex-col items-center justify-center p-10 bg-white shadow-sm hover:scale-[1.03] hover:shadow-md transition-all duration-300 cursor-pointer min-h-[140px] border border-gray-100">
+            <VoltasLogo />
+            <p className="text-xs text-[#1a2a3a]/40 mt-3 font-semibold uppercase tracking-widest">Authorized Service</p>
           </div>
 
-          {/* Coming Soon 2 */}
-          <div className="flex flex-col items-center justify-center p-10 border-2 border-dashed border-gray-300 bg-white min-h-[140px] animate-[pulse-slow_2s_ease-in-out_infinite] [animation-delay:300ms]">
-            <Lock className="w-8 h-8 text-gray-300 mb-2" strokeWidth={1.5} />
-            <span className="text-gray-400 font-medium text-sm">Coming Soon</span>
+          {/* Blue Star */}
+          <div className="flex flex-col items-center justify-center p-10 bg-white shadow-sm hover:scale-[1.03] hover:shadow-md transition-all duration-300 cursor-pointer min-h-[140px] border border-gray-100">
+            <BlueStarLogo />
+            <p className="text-xs text-[#1a2a3a]/40 mt-3 font-semibold uppercase tracking-widest">Authorized Service</p>
           </div>
         </div>
       </div>

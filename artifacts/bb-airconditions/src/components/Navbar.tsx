@@ -64,7 +64,7 @@ export function Navbar() {
             {/* Call — outlined blue */}
             <a
               href="tel:+918777793800"
-              className="flex items-center gap-2 bg-transparent hover:bg-daikin/10 text-daikin font-semibold transition-colors whitespace-nowrap px-4 py-2 border border-daikin"
+              className="flex items-center gap-2 bg-white hover:bg-white/90 text-daikin font-semibold transition-colors whitespace-nowrap px-4 py-2 border border-daikin"
               style={{ borderRadius: '6px', fontSize: '14px' }}
             >
               <Phone className="w-4 h-4 flex-shrink-0 text-daikin" />
