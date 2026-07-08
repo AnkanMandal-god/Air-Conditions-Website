@@ -42,7 +42,7 @@ function FeatureCard({ icon: Icon, title, desc, delay, isVisible }: FeatureCardP
 
   return (
     <div
-      className="flex flex-col items-center text-center px-8 py-10 transition-all duration-700 rounded-xl border border-white/5 hover:border-daikin/30 hover:bg-white/5"
+      className="flex flex-col items-center text-center px-8 py-10 transition-all duration-700 rounded border border-white/5 hover:border-daikin/30 hover:bg-white/5"
       style={{
         opacity: isVisible ? 1 : 0,
         transform: isVisible ? 'translateY(0)' : 'translateY(30px)',

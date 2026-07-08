@@ -50,7 +50,7 @@ function ServiceCard({ icon: Icon, title, desc }: { icon: React.ElementType; tit
       ref={cardRef}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className="relative group flex flex-col text-center p-8 bg-[#f0f8ff] overflow-hidden cursor-default"
+      className="relative group flex flex-col text-center p-5 bg-[#f0f8ff] overflow-hidden cursor-default"
       style={{
         boxShadow: '0 4px 20px rgba(0,0,0,0.08)',
         transition: 'box-shadow 0.3s ease',
@@ -143,7 +143,7 @@ export function Services() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((svc, idx) => (
             <ServiceCard key={idx} icon={svc.icon} title={svc.title} desc={svc.desc} />
           ))}

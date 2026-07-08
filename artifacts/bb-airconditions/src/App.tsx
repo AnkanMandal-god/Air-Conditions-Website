@@ -6,6 +6,7 @@ import { TrustBar } from "@/components/TrustBar";
 import { Services } from "@/components/Services";
 import { Brands } from "@/components/Brands";
 import { WhyChooseUs } from "@/components/WhyChooseUs";
+import { Reviews } from "@/components/Reviews";
 import { FAQ } from "@/components/FAQ";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
@@ -24,6 +25,7 @@ function App() {
           <Services />
           <Brands />
           <WhyChooseUs />
+          <Reviews />
           <FAQ />
           <Contact />
         </main>
