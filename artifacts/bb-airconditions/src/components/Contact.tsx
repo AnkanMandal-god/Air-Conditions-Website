@@ -36,7 +36,15 @@ export function Contact() {
               <MapPin className="w-5 h-5 text-daikin mt-0.5 flex-shrink-0" />
               <div>
                 <p className="text-[#1a2a3a]/50 text-xs font-semibold uppercase tracking-widest mb-1">Address</p>
-                <p className="text-[#1a2a3a] font-semibold">6, Robert Street, Pilkhana, Kolkata - 700012</p>
+                <p className="text-[#1a2a3a] font-semibold">6, Robert Street (Near Bowbazar P.S.), Kolkata - 12</p>
+                <a
+                  href="https://maps.google.com/?q=6,+Robert+Street,+Bowbazar,+Kolkata+700012"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-daikin text-xs hover:underline mt-1 inline-block"
+                >
+                  View on Google Maps ↗
+                </a>
               </div>
             </div>
 
@@ -44,13 +52,27 @@ export function Contact() {
             <div className="flex items-start gap-4 pl-4 border-l-[3px] border-daikin">
               <Phone className="w-5 h-5 text-daikin mt-0.5 flex-shrink-0" />
               <div>
-                <p className="text-[#1a2a3a]/50 text-xs font-semibold uppercase tracking-widest mb-1">Phone</p>
-                <a
-                  href="tel:+918777793800"
-                  className="text-[#1a2a3a] font-semibold hover:text-daikin transition-colors"
-                >
-                  087777 93800
-                </a>
+                <p className="text-[#1a2a3a]/50 text-xs font-semibold uppercase tracking-widest mb-1">Contact Numbers</p>
+                <div className="space-y-1">
+                  <div>
+                    <span className="text-[#1a2a3a]/50 text-xs">Asik: </span>
+                    <a
+                      href="tel:+918777793800"
+                      className="text-[#1a2a3a] font-semibold hover:text-daikin transition-colors"
+                    >
+                      87777 93800
+                    </a>
+                  </div>
+                  <div>
+                    <span className="text-[#1a2a3a]/50 text-xs">A. Barick: </span>
+                    <a
+                      href="tel:+919830526429"
+                      className="text-[#1a2a3a] font-semibold hover:text-daikin transition-colors"
+                    >
+                      98305 26429
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
 

@@ -74,7 +74,18 @@ export function Footer() {
                   <Phone
                     className="w-4 h-4 flex-shrink-0 transition-all duration-200 group-hover:text-daikin group-hover:drop-shadow-[0_0_6px_rgba(0,153,204,0.8)]"
                   />
-                  087777 93800
+                  Asik: 87777 93800
+                </a>
+              </li>
+              <li>
+                <a
+                  href="tel:+919830526429"
+                  className="flex items-center gap-3 text-white/55 hover:text-daikin transition-colors duration-200 text-sm group"
+                >
+                  <Phone
+                    className="w-4 h-4 flex-shrink-0 transition-all duration-200 group-hover:text-daikin group-hover:drop-shadow-[0_0_6px_rgba(0,153,204,0.8)]"
+                  />
+                  A. Barick: 98305 26429
                 </a>
               </li>
               <li>
@@ -92,27 +103,30 @@ export function Footer() {
               </li>
               <li>
                 <a
-                  href="mailto:ankan@novasites.co"
+                  href="mailto:asikikbal769@gmail.com"
                   className="flex items-center gap-3 text-white/55 hover:text-daikin transition-colors duration-200 text-sm group"
                 >
                   <Mail
                     className="w-4 h-4 flex-shrink-0 transition-all duration-200 group-hover:text-daikin group-hover:drop-shadow-[0_0_6px_rgba(0,153,204,0.8)]"
                   />
-                  ankan@novasites.co
+                  asikikbal769@gmail.com
                 </a>
               </li>
               <li className="flex items-start gap-3 text-white/55 text-sm">
                 <MapPin className="w-4 h-4 flex-shrink-0 mt-0.5" />
-                6, Robert Street, Pilkhana, Kolkata - 700012
+                6, Robert Street (Near Bowbazar P.S.), Kolkata - 12
               </li>
             </ul>
           </div>
         </div>
 
         {/* Bottom bar */}
-        <div className="border-t border-white/10 pt-6">
-          <p className="text-center text-white/25 text-xs">
+        <div className="border-t border-white/10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-2">
+          <p className="text-white/25 text-xs">
             &copy; {new Date().getFullYear()} B.B. Airconditions. All rights reserved.
+          </p>
+          <p className="text-white/25 text-xs">
+            GSTIN: 19BLGPS3202N1ZR
           </p>
         </div>
       </div>

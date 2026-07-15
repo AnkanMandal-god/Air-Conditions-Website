@@ -11,6 +11,7 @@ import { FAQ } from "@/components/FAQ";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
 import { FloatingCTAs } from "@/components/FloatingCTAs";
+import { AboutSEO } from "@/components/AboutSEO";
 
 const queryClient = new QueryClient();
 
@@ -22,6 +23,7 @@ function App() {
         <main>
           <Hero />
           <TrustBar />
+          <AboutSEO />
           <Services />
           <Brands />
           <WhyChooseUs />

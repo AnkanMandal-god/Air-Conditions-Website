@@ -71,7 +71,7 @@ export function FloatingCTAs() {
     {
       icon: Mail,
       label: 'Email Us',
-      href: 'mailto:ankan@novasites.co',
+      href: 'mailto:asikikbal769@gmail.com',
       bgColor: 'bg-[#e05555]',
       delay: 0,
     },
