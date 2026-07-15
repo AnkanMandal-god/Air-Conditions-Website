@@ -33,10 +33,10 @@ function App() {
         <main>
           <Hero onBookNow={() => openBooking()} />
           <TrustBar />
-          <AboutSEO />
           <Services onBookNow={openBooking} />
           <Brands />
           <WhyChooseUs />
+          <AboutSEO />
           <Reviews />
           <FAQ />
           <Contact />
