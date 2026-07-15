@@ -3,7 +3,11 @@ import heroImg from '@/assets/hero-ac.jpg';
 
 const rajdhani = "'Rajdhani', sans-serif";
 
-export function Hero() {
+interface HeroProps {
+  onBookNow: () => void;
+}
+
+export function Hero({ onBookNow }: HeroProps) {
   const titleWords = "Kolkata's Trusted AC Experts".split(' ');
 
   return (
@@ -82,11 +86,9 @@ export function Hero() {
             transition={{ duration: 0.6, delay: 1.1 }}
             className="flex flex-col sm:flex-row gap-4"
           >
-            {/* Book a Service — slide to white, text turns daikin blue */}
-            <a
-              href="https://wa.me/918777793800?text=I%20want%20to%20book%20a%20service"
-              target="_blank"
-              rel="noopener noreferrer"
+            {/* Book a Service — opens modal */}
+            <button
+              onClick={onBookNow}
               className="relative overflow-hidden group bg-daikin text-white px-9 py-4 font-bold text-lg text-center transition-colors duration-300"
               style={{ borderRadius: '6px' }}
             >
@@ -94,7 +96,7 @@ export function Hero() {
               <span className="relative z-10 group-hover:text-daikin transition-colors duration-300">
                 Book a Service
               </span>
-            </a>
+            </button>
 
             {/* Call Us — slide to white, text turns navy */}
             <a

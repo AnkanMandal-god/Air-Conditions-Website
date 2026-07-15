@@ -19,7 +19,7 @@ const services = [
   { icon: Building, title: 'Commercial HVAC', desc: 'Large-scale HVAC solutions for offices and businesses' },
 ];
 
-function ServiceCard({ icon: Icon, title, desc }: { icon: React.ElementType; title: string; desc: string }) {
+function ServiceCard({ icon: Icon, title, desc, onBookNow }: { icon: React.ElementType; title: string; desc: string; onBookNow: (service: string) => void }) {
   const cardRef = useRef<HTMLDivElement>(null);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -43,7 +43,7 @@ function ServiceCard({ icon: Icon, title, desc }: { icon: React.ElementType; tit
     card.style.transform = '';
   };
 
-  const waLink = `https://wa.me/918777793800?text=I%20need%20a%20quote%20for%20${encodeURIComponent(title)}`;
+  const serviceId = title.toLowerCase().replace(/[^a-z]+/g, '-').replace(/-$/, '');
 
   return (
     <div
@@ -86,24 +86,22 @@ function ServiceCard({ icon: Icon, title, desc }: { icon: React.ElementType; tit
         </h3>
         <p className="text-[#1a2a3a]/60 text-sm leading-relaxed mb-6">{desc}</p>
 
-        {/* Book Now button — slide fill on hover */}
-        <a
-          href={waLink}
-          target="_blank"
-          rel="noopener noreferrer"
+        {/* Book Now button — opens modal */}
+        <button
+          onClick={() => onBookNow(serviceId)}
           className="relative overflow-hidden mt-auto inline-flex items-center gap-2 px-5 py-2.5 font-semibold text-sm border border-daikin text-daikin rounded-md transition-colors duration-300 group/btn"
           style={{ borderRadius: '6px' }}
         >
           <span className="absolute inset-0 bg-daikin translate-x-[-100%] group-hover/btn:translate-x-0 transition-transform duration-300 ease-in-out" />
           <span className="relative z-10 group-hover/btn:text-white transition-colors duration-300">Book Now</span>
           <ArrowRight className="relative z-10 w-4 h-4 group-hover/btn:text-white transition-colors duration-300 group-hover/btn:translate-x-1 transition-transform" />
-        </a>
+        </button>
       </div>
     </div>
   );
 }
 
-export function Services() {
+export function Services({ onBookNow }: { onBookNow: (service: string) => void }) {
   const [activeSlide, setActiveSlide] = useState(0);
 
   useEffect(() => {
@@ -145,7 +143,7 @@ export function Services() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((svc, idx) => (
-            <ServiceCard key={idx} icon={svc.icon} title={svc.title} desc={svc.desc} />
+            <ServiceCard key={idx} icon={svc.icon} title={svc.title} desc={svc.desc} onBookNow={onBookNow} />
           ))}
         </div>
       </div>

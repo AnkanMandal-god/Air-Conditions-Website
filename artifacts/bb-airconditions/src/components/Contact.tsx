@@ -9,8 +9,20 @@ export function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    const msg = [
+      '💬 *New Enquiry — B.B. Airconditions*',
+      '',
+      `*Name:* ${form.name}`,
+      `*Phone:* ${form.phone}`,
+      `*Message:* ${form.message}`,
+    ].join('\n');
+    window.open(
+      `https://wa.me/918777793800?text=${encodeURIComponent(msg)}`,
+      '_blank',
+      'noopener,noreferrer'
+    );
     setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 4000);
+    setTimeout(() => setSubmitted(false), 5000);
     setForm({ name: '', phone: '', message: '' });
   };
 
