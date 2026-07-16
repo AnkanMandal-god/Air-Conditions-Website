@@ -6,24 +6,24 @@ const GMAPS_LINK =
 
 function SectionHeading({ children }: { children: React.ReactNode }) {
   return (
-    <div className="mb-5">
+    <div className="mb-3">
       <h3
         className="text-[#1a2a3a]"
-        style={{ fontFamily: rajdhani, fontSize: '22px', fontWeight: 700, letterSpacing: '0.01em' }}
+        style={{ fontFamily: rajdhani, fontSize: '20px', fontWeight: 700, letterSpacing: '0.01em' }}
       >
         {children}
       </h3>
-      <div className="mt-2 w-10 h-px bg-[#0099cc]" />
+      <div className="mt-1.5 w-8 h-px bg-[#0099cc]" />
     </div>
   );
 }
 
 export function AboutSEO() {
   return (
-    <section id="about" className="py-20 bg-white">
+    <section id="about" className="py-10 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
-          <div className="mb-12 text-center">
+          <div className="mb-7 text-center">
             <h2
               className="text-[#1a2a3a] mb-3"
               style={{ fontFamily: rajdhani, fontSize: 'clamp(26px, 3.5vw, 38px)', fontWeight: 700 }}
@@ -38,7 +38,7 @@ export function AboutSEO() {
             <div className="flex-1 md:pr-10">
               <SectionHeading>About B.B. Airconditions</SectionHeading>
               <div
-                className="text-[#1a2a3a] leading-[1.85] text-[15px] space-y-5"
+                className="text-[#1a2a3a] leading-[1.7] text-[14px] space-y-3"
                 style={{ fontFamily: lora }}
               >
                 <p>
@@ -75,7 +75,7 @@ export function AboutSEO() {
             <div className="flex-1 md:pl-10">
               <SectionHeading>Why Kolkata Trusts Us</SectionHeading>
               <div
-                className="text-[#1a2a3a] leading-[1.85] text-[15px] space-y-5"
+                className="text-[#1a2a3a] leading-[1.7] text-[14px] space-y-3"
                 style={{ fontFamily: lora }}
               >
                 <p>
