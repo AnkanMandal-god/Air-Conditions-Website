@@ -6,7 +6,7 @@ const GMAPS_LINK =
 
 function SectionHeading({ children }: { children: React.ReactNode }) {
   return (
-    <div className="mb-6">
+    <div className="mb-5">
       <h3
         className="text-[#1a2a3a]"
         style={{ fontFamily: rajdhani, fontSize: '22px', fontWeight: 700, letterSpacing: '0.01em' }}
@@ -33,12 +33,12 @@ export function AboutSEO() {
             <div className="w-20 h-1 bg-[#0099cc] mx-auto rounded-full" />
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-14">
+          <div className="flex flex-col md:flex-row">
             {/* Left column */}
-            <div>
+            <div className="flex-1 md:pr-10">
               <SectionHeading>About B.B. Airconditions</SectionHeading>
               <div
-                className="text-[#1a2a3a]/70 leading-[1.85] text-[15px] space-y-5"
+                className="text-[#1a2a3a] leading-[1.85] text-[15px] space-y-5"
                 style={{ fontFamily: lora }}
               >
                 <p>
@@ -65,14 +65,17 @@ export function AboutSEO() {
               </div>
             </div>
 
-            {/* Divider (visible on desktop) */}
-            <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px" />
+            {/* Vertical divider — desktop only */}
+            <div className="hidden md:block w-px bg-[#0099cc]/25 mx-4 self-stretch flex-shrink-0" />
+
+            {/* Horizontal divider — mobile only */}
+            <div className="block md:hidden h-px bg-[#0099cc]/25 my-8" />
 
             {/* Right column */}
-            <div>
+            <div className="flex-1 md:pl-10">
               <SectionHeading>Why Kolkata Trusts Us</SectionHeading>
               <div
-                className="text-[#1a2a3a]/70 leading-[1.85] text-[15px] space-y-5"
+                className="text-[#1a2a3a] leading-[1.85] text-[15px] space-y-5"
                 style={{ fontFamily: lora }}
               >
                 <p>
