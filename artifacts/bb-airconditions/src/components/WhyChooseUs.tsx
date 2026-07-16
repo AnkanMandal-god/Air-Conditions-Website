@@ -89,8 +89,8 @@ export function WhyChooseUs() {
   const features = [
     {
       icon: Shield,
-      title: 'Authorized Dealer',
-      desc: 'Official Daikin dealer ensuring genuine parts and certified installations for every project.',
+      title: 'Authorized Contractor',
+      desc: 'Official Daikin contractor ensuring genuine parts and certified installations for every project.',
       delay: 0,
     },
     {

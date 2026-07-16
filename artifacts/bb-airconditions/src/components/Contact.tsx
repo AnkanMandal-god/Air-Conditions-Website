@@ -50,7 +50,7 @@ export function Contact() {
                 <p className="text-[#1a2a3a]/50 text-xs font-semibold uppercase tracking-widest mb-1">Address</p>
                 <p className="text-[#1a2a3a] font-semibold">6, Robert Street (Near Bowbazar P.S.), Kolkata - 12</p>
                 <a
-                  href="https://maps.google.com/?q=6,+Robert+Street,+Bowbazar,+Kolkata+700012"
+                  href="https://www.google.com/maps/place/BB+Air+Condition+sales+and+service/@22.5691084,88.3542215,17z/data=!4m15!1m8!3m7!1s0x3a0277a9486cdfaf:0x9567086dd1ad2b32!2s6,+Robert+St,+near+Bowbazar,+Bowbazar,+Kolkata,+Thana,+West+Bengal+700012!3b1!8m2!3d22.5691084!4d88.3567964!16s%2Fg%2F11yjgkgl4c!3m5!1s0x3a0277cde4d3a421:0xe413b8cd0f124cbe!8m2!3d22.5691084!4d88.3567964!16s%2Fg%2F11z5vydwvd?entry=ttu&g_ep=EgoyMDI2MDcxMy4wIKXMDSoASAFQAw%3D%3D"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-daikin text-xs hover:underline mt-1 inline-block"
@@ -108,7 +108,7 @@ export function Contact() {
             <div className="rounded-lg overflow-hidden border border-sky-200 h-56 shadow-sm">
               <iframe
                 title="B.B. Airconditions Location"
-                src="https://maps.google.com/maps?q=6,+Robert+Street,+Pilkhana,+Kolkata+700012&output=embed"
+                src="https://maps.google.com/maps?q=22.5691084,88.3567964&output=embed"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}

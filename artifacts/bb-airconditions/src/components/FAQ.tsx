@@ -10,7 +10,7 @@ const faqs = [
   },
   {
     q: 'Which brands do you sell and service?',
-    a: 'We are an authorized Daikin dealer and also service Godrej and most other major AC brands available in India.',
+    a: 'We are an authorized Daikin contractor and also service Godrej and most other major AC brands available in India.',
   },
   {
     q: 'How quickly can you send a technician?',
