@@ -68,7 +68,7 @@ export function Navbar() {
               style={{ borderRadius: '6px', fontSize: '14px' }}
             >
               <Phone className="w-4 h-4 flex-shrink-0 text-daikin" />
-              <span>087777 93800</span>
+              <span>87777 93800</span>
             </a>
             {/* WhatsApp */}
             <a
@@ -114,7 +114,7 @@ export function Navbar() {
                 className="flex items-center gap-2 bg-daikin text-white px-4 py-3 font-semibold rounded-md"
               >
                 <Phone className="w-4 h-4" />
-                087777 93800
+                87777 93800
               </a>
               <a
                 href="https://wa.me/918777793800?text=I%20need%20AC%20services"

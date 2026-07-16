@@ -2,7 +2,7 @@ import { CheckCircle2, Star, Building2, Clock } from 'lucide-react';
 
 export function TrustBar() {
   const items = [
-    { icon: CheckCircle2, text: 'Authorized Daikin Dealer' },
+    { icon: CheckCircle2, text: 'Authorized Daikin Contractor' },
     { icon: Star, text: '5★ Google Rated' },
     { icon: Building2, text: 'Residential & Commercial' },
     { icon: Clock, text: '10+ Years Experience' },

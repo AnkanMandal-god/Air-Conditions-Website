@@ -117,7 +117,7 @@ export function Brands() {
           {/* Daikin */}
           <div className="flex flex-col items-center justify-center p-10 bg-white shadow-sm hover:scale-[1.03] hover:shadow-md transition-all duration-300 cursor-pointer min-h-[140px] border border-gray-100">
             <DaikinLogo />
-            <p className="text-xs text-[#1a2a3a]/40 mt-3 font-semibold uppercase tracking-widest">Authorized Dealer</p>
+            <p className="text-xs text-[#1a2a3a]/40 mt-3 font-semibold uppercase tracking-widest">Authorized Contractor</p>
           </div>
 
           {/* Godrej */}
